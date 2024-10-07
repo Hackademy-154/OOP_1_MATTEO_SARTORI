@@ -189,16 +189,20 @@ $stampa= new Uccelli();
 
 
 class Car {
+
     private $num_telaio;
+
     public function __construct($telaio){
         $this->num_telaio=$telaio;
     }
+
     protected function getNumTelaio(){
         return $this->num_telaio;
     }
 }
 
 class Fiat extends Car {
+
     protected $license;
     protected $name;
 
@@ -207,11 +211,13 @@ class Fiat extends Car {
         $this->license=$licenses;
         $this->name=$names;
     }
+
     public function printCar(){
-        echo "La mia macchina è {$this->name}, con targa {$this->license}, e numero di telaio {$this->num_telaio}";
+        echo "\nLa mia macchina è {$this->name}, con targa {$this->license}, e numero di telaio {$this->getNumTelaio()} \n";
     }
 }
 
 $car= new Fiat("12345","dksfksdfk","Opel");
-echo $car->printCar();
+$car->printCar();
 var_dump($car);
+
